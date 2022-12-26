@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cash Register</title>
+
+  <!-- HTML -->
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script src="main.js"></script>
+  <div id="register">
+    <h1>My Cafe</h1>
+    <form>
+      <label for="item-name">Item Name:</label>
+      <input type="text" id="item-name" name="item-name">
+      <label for="item-price">Item Price:</label>
+      <input type="number" id="item-price" name="item-price" min="0"><br>
+      <label for="item-quantity">Quantity:</label>
+      <input type="number" id="item-quantity" name="item-quantity" min="1" value="1"><br>
+
+      <button type="button" onclick="addItem()">Add Item</button>
+    </form>
+    <form>
+      <label for="tip">Tip(%):</label><br>
+      <input type="number" id="tip" name="tip" min="0" value="0">
+      <button type="button" onclick="addTip()">Add Tip</button>
+      <button type="button" onclick="clearReceipt()">Clear</button>
+
+    </form>
+    <h2>Receipt</h2>
+    <table id="receipt">
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </table>
+    <p>Total: <span id="total" style="font-weight: bold">$0.00</span></p>
+    <p>Total with Tip: <span id="total-with-tip" style="font-weight: bold">$0.00</span> (<span id="tip-per">0%</span>)</p>
+    <label for="amount-paid">Amount paid:</label><br>
+    <input type="number" id="amount-paid" name="amount-paid" min="0"><br>
+    <button onclick="calculateChange()">Calculate change</button><br>
+    <label for="change">Change:</label>
+    <span id="change" style="font-weight: bold"></span>
+
+  </div>
+
+</body>
+
+</html>
